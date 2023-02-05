@@ -1,4 +1,5 @@
 import { ViewBar } from "components/ViewBar";
+import { Button } from "components/Button";
 
 export function ViewDoc() {
   return (
@@ -7,6 +8,27 @@ export function ViewDoc() {
 
       <ViewBar />
       <ViewBar />
+
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
     </>
   );
 };
