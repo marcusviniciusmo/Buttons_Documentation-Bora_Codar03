@@ -1,5 +1,6 @@
 import { ViewBar } from "components/ViewBar";
 import { Button } from "components/Button";
+import { Cursor } from "components/Cursor";
 
 export function ViewDoc() {
   return (
@@ -29,6 +30,13 @@ export function ViewDoc() {
       <Button />
       <Button />
       <Button />
+
+      <Cursor />
+      <Cursor />
+      <Cursor />
+      <Cursor />
+      <Cursor />
+      <Cursor />
     </>
   );
 };
