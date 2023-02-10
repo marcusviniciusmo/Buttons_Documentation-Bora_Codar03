@@ -6,7 +6,13 @@ import { Container } from "./styles";
 export function Documentation() {
   return (
     <Container>
-      <TextDoc />
+      <TextDoc
+        className='documentation'
+        header='Tipos de botão'
+        text={`Dentro de um layout, botões servem para destacar ações
+          importantes a serem tomadas. Acompanhe abaixo um exemplo de tipos e
+          propriedades.`}
+      />
 
       <ViewDoc />
 
