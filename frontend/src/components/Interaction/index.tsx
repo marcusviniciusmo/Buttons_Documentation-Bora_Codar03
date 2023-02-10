@@ -1,16 +1,15 @@
 import { TextDoc } from "components/TextDoc";
 import { Button } from "components/Button";
+import { Container } from "./styles";
 
 export function Interaction() {
   return (
-    <>
-      <h1>INTERACTION Component</h1>
-
+    <Container>
       <TextDoc />
 
       <Button />
       <Button />
       <Button />
-    </>
+    </Container>
   );
 };
