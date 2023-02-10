@@ -1,7 +1,7 @@
 import { ViewBar } from "components/ViewBar";
 import { Button } from "components/Button";
 import { Cursor } from "components/Cursor";
-import { Container, View, Content } from "./styles";
+import { Container, View, Content, ViewButtons, Col } from "./styles";
 
 export function ViewDoc() {
   return (
@@ -12,33 +12,43 @@ export function ViewDoc() {
         <Content>
           <ViewBar className='verticalBar' />
 
-          <Button />
-          <Button />
-          <Button />
-          <Button />
-          <Button />
-          <Button />
+          <ViewButtons>
+            <Col width='21.3'>
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+            </Col>
 
-          <Button />
-          <Button />
-          <Button />
-          <Button />
-          <Button />
-          <Button />
+            <Col width='23.8'>
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+            </Col>
 
-          <Button />
-          <Button />
-          <Button />
-          <Button />
-          <Button />
-          <Button />
+            <Col width='21.9'>
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+              <Button />
+            </Col>
 
-          <Cursor />
-          <Cursor />
-          <Cursor />
-          <Cursor />
-          <Cursor />
-          <Cursor />
+            <Col width='4.8'>
+              <Cursor />
+              <Cursor />
+              <Cursor />
+              <Cursor />
+              <Cursor />
+              <Cursor />
+            </Col>
+          </ViewButtons>
         </Content>
       </View>
     </Container>

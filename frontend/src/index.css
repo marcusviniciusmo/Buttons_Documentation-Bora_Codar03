@@ -9,6 +9,8 @@
   --background-interaction: #130F1E;
   --background-viewBar: #1C162C;
 
+  --border-viewDoc: #1C162C;
+
   font-size: 62.5% /* 1rem = 10px */;
 }
 
