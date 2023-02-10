@@ -1,42 +1,46 @@
 import { ViewBar } from "components/ViewBar";
 import { Button } from "components/Button";
 import { Cursor } from "components/Cursor";
+import { Container, View, Content } from "./styles";
 
 export function ViewDoc() {
   return (
-    <>
-      <h1>VIEW DOC Component</h1>
-
-      <ViewBar />
+    <Container>
       <ViewBar />
 
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+      <View>
+        <Content>
+          <ViewBar />
 
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
 
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
 
-      <Cursor />
-      <Cursor />
-      <Cursor />
-      <Cursor />
-      <Cursor />
-      <Cursor />
-    </>
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+          <Button />
+
+          <Cursor />
+          <Cursor />
+          <Cursor />
+          <Cursor />
+          <Cursor />
+          <Cursor />
+        </Content>
+      </View>
+    </Container>
   );
 };
