@@ -1,5 +1,46 @@
-export function ViewBar() {
+import { ViewBarProps } from 'types/ViewBar';
+import * as Styles from './styles';
+
+export function ViewBar(props: ViewBarProps) {
   return (
-    <h1>VIEW BAR Component</h1>
+    <Styles.Container className={props.className}>
+      {
+        props.className === 'horizontalBar'
+          ? <>
+            <Styles.Col width='23'>
+              <Styles.Label>Botão Primário</Styles.Label>
+            </Styles.Col>
+            <Styles.Col width='23.3'>
+              <Styles.Label>Botão Secundário</Styles.Label>
+            </Styles.Col>
+            <Styles.Col width='20.3'>
+              <Styles.Label>Botão Terciário</Styles.Label>
+            </Styles.Col>
+            <Styles.Col width='8.4'>
+              <Styles.Label>Cursor</Styles.Label>
+            </Styles.Col>
+          </>
+          : <Styles.Sidebar>
+            <Styles.Row>
+              <Styles.Label>Default</Styles.Label>
+            </Styles.Row>
+            <Styles.Row>
+              <Styles.Label>Hover</Styles.Label>
+            </Styles.Row>
+            <Styles.Row>
+              <Styles.Label>Focus</Styles.Label>
+            </Styles.Row>
+            <Styles.Row>
+              <Styles.Label>Disabled</Styles.Label>
+            </Styles.Row>
+            <Styles.Row>
+              <Styles.Label>Loading</Styles.Label>
+            </Styles.Row>
+            <Styles.Row>
+              <Styles.Label>Movable</Styles.Label>
+            </Styles.Row>
+          </Styles.Sidebar>
+      }
+    </Styles.Container>
   );
 };

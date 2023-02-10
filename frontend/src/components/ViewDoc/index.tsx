@@ -6,11 +6,11 @@ import { Container, View, Content } from "./styles";
 export function ViewDoc() {
   return (
     <Container>
-      <ViewBar />
+      <ViewBar className='horizontalBar' />
 
       <View>
         <Content>
-          <ViewBar />
+          <ViewBar className='verticalBar' />
 
           <Button />
           <Button />
