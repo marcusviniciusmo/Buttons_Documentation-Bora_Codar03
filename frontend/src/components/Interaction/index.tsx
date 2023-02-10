@@ -13,9 +13,18 @@ export function Interaction() {
       />
 
       <Buttons>
-        <Button />
-        <Button />
-        <Button />
+        <Button
+          className='interaction primary'
+          label='Interaja Comigo'
+          />
+        <Button
+          className='interaction secondary'
+          label='Interaja Comigo'
+          />
+        <Button
+          className='interaction tertiary'
+          label='Interaja Comigo'
+          />
       </Buttons>
     </Container>
   );

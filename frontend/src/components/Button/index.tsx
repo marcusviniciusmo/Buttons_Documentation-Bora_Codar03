@@ -1,5 +1,10 @@
-export function Button() {
+import { ButtonProps } from "types/Buttons";
+import { Container, Label } from "./styles";
+
+export function Button(props: ButtonProps) {
   return (
-    <h1>BUTTON Component</h1>
+    <Container className={props.className}>
+      <Label>{props.label}</Label>
+    </Container>
   );
 };
