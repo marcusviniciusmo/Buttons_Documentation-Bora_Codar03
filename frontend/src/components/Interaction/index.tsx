@@ -1,6 +1,6 @@
 import { TextDoc } from "components/TextDoc";
 import { Button } from "components/Button";
-import { Container } from "./styles";
+import { Container, Buttons } from "./styles";
 
 export function Interaction() {
   return (
@@ -12,9 +12,11 @@ export function Interaction() {
           cursores`}
       />
 
-      <Button />
-      <Button />
-      <Button />
+      <Buttons>
+        <Button />
+        <Button />
+        <Button />
+      </Buttons>
     </Container>
   );
 };

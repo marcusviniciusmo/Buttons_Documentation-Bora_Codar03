@@ -8,3 +8,16 @@ export const Container = styled.div`
   top: 0rem;
   left: 111.1rem;
 `;
+
+export const Buttons = styled.div`
+  width: 31.7rem;
+  height: 20.8rem;
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.2rem;
+  position: absolute;
+  top: 26.1rem;
+  left: 4.5rem;
+`;
