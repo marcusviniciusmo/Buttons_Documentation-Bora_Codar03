@@ -1,17 +1,16 @@
 import { TextDoc } from "components/TextDoc";
 import { ViewDoc } from "components/ViewDoc";
 import { Interaction } from "components/Interaction";
+import { Container } from "./styles";
 
 export function Documentation() {
   return (
-    <>
-      <h1>DOCUMENTATION Component</h1>
-
+    <Container>
       <TextDoc />
 
       <ViewDoc />
 
       <Interaction />
-    </>
+    </Container>
   );
 };
