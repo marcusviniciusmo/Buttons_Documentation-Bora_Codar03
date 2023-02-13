@@ -1,3 +1,10 @@
+import CursorDefault from 'assets/cursorDefault.png';
+import CursorHover from 'assets/cursorHover.png';
+import CursorFocus from 'assets/cursorFocus.png';
+import CursorDisabled from 'assets/cursorDisabled.png';
+import CursorLoading from 'assets/cursorLoading.png';
+import CursorMovable from 'assets/cursorMovable.png';
+import MaskCursor from 'assets/maskCursor.png';
 import { ViewBar } from "components/ViewBar";
 import { Button } from "components/Button";
 import { Cursor } from "components/Cursor";
@@ -110,12 +117,12 @@ export function ViewDoc() {
             </Col>
 
             <Col width='4.8'>
-              <Cursor />
-              <Cursor />
-              <Cursor />
-              <Cursor />
-              <Cursor />
-              <Cursor />
+              <Cursor className='default' pointer={CursorDefault} />
+              <Cursor className='hover' pointer={CursorHover} />
+              <Cursor className='focus' pointer={CursorFocus} />
+              <Cursor className='disabled' pointer={CursorDisabled} />
+              <Cursor className='loading' pointer={CursorLoading} mask={MaskCursor} />
+              <Cursor className='movable' pointer={CursorMovable} />
             </Col>
           </ViewButtons>
         </Content>
