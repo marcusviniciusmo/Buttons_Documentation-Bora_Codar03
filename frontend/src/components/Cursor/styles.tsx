@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: flex-start;
   gap: 1rem;
   position: relative;
+  cursor: pointer;
 
   &.disabled {
     width: 3.4;
