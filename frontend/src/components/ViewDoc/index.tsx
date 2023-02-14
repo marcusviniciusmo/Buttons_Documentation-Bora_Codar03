@@ -4,6 +4,8 @@ import CursorFocus from 'assets/cursorFocus.png';
 import CursorDisabled from 'assets/cursorDisabled.png';
 import CursorLoading from 'assets/cursorLoading.png';
 import CursorMovable from 'assets/cursorMovable.png';
+import IconLoading from 'assets/iconLoading.png';
+import IconMovable from 'assets/iconMovable.png';
 import MaskCursor from 'assets/maskCursor.png';
 import { ViewBar } from "components/ViewBar";
 import { Button } from "components/Button";
@@ -44,11 +46,13 @@ export function ViewDoc() {
               <Button
                 className='loading primary'
                 label='Loading Primary'
+                icon={IconLoading}
               />
 
               <Button
                 className='movable primary'
                 label='Movable Primary'
+                icon={IconMovable}
               />
             </Col>
 
@@ -76,11 +80,13 @@ export function ViewDoc() {
               <Button
                 className='loading secondary'
                 label='Loading Secondary'
+                icon={IconLoading}
               />
 
               <Button
                 className='movable secondary'
                 label='Movable Secondary'
+                icon={IconMovable}
               />
             </Col>
 
@@ -108,11 +114,13 @@ export function ViewDoc() {
               <Button
                 className='loading tertiary'
                 label='Loading Tertiary'
+                icon={IconLoading}
               />
 
               <Button
                 className='movable tertiary'
                 label='Movable Tertiary'
+                icon={IconMovable}
               />
             </Col>
 

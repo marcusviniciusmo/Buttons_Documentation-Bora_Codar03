@@ -106,7 +106,41 @@ export const Container = styled.div`
   &.interaction {
     width: 31.7rem;
   }
+
+  &.interactionPrimaryHover {
+    background: var(--background-button-primary-hover);
+    cursor: pointer;
+  }
+
+  &.interactionSecondaryHover {
+    background: var(--background-button-secondary-hover);
+    cursor: pointer;
+  }
+
+  &.interactionTertiaryHover {
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &.interactionFocus {
+    border: 0.2rem solid var(--border-button-focus);
+  }
+
+  &.interactionDisabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &.interactionLoading {
+    cursor: wait;
+  }
+
+  &.interactionMovable {
+    cursor: move;
+  }
 `;
+
+export const Icon = styled.img``;
 
 export const Label = styled.span`
   font-family: 'Inter';
