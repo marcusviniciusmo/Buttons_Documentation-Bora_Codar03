@@ -1,136 +1,81 @@
-import CursorDefault from 'assets/cursorDefault.png';
-import CursorHover from 'assets/cursorHover.png';
-import CursorFocus from 'assets/cursorFocus.png';
-import CursorDisabled from 'assets/cursorDisabled.png';
-import CursorLoading from 'assets/cursorLoading.png';
-import CursorMovable from 'assets/cursorMovable.png';
-import IconLoading from 'assets/iconLoading.png';
-import IconMovable from 'assets/iconMovable.png';
-import MaskCursor from 'assets/maskCursor.png';
+import { useEffect, useState } from 'react';
 import { ViewBar } from "components/ViewBar";
 import { Button } from "components/Button";
 import { Cursor } from "components/Cursor";
+import { MockedData } from 'mocks/ViewDoc';
+import { ViewDocMocks } from 'types/ViewDoc';
 import { Container, View, Content, ViewButtons, Col } from "./styles";
 
 export function ViewDoc() {
+  const [mockedData, setMockedData] = useState<ViewDocMocks>();
+
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
+
   return (
     <Container>
-      <ViewBar className='horizontalBar' />
+      <ViewBar className={mockedData?.horizontalClassName} />
 
       <View>
         <Content>
-          <ViewBar className='verticalBar' />
+          <ViewBar className={mockedData?.verticalClassName} />
 
           <ViewButtons>
-            <Col width='21.3'>
-              <Button
-                className='default primary'
-                label='Default Primary'
-              />
-
-              <Button
-                className='hover primary'
-                label='Hover Primary'
-              />
-
-              <Button
-                className='focus primary'
-                label='Focus Primary'
-              />
-
-              <Button
-                className='disabled primary'
-                label='Disabled Primary'
-              />
-
-              <Button
-                className='loading primary'
-                label='Loading Primary'
-                icon={IconLoading}
-              />
-
-              <Button
-                className='movable primary'
-                label='Movable Primary'
-                icon={IconMovable}
-              />
+            <Col width={mockedData!?.documentation.primary.width}>
+              {
+                mockedData?.documentation.primary.buttons.map((p) => {
+                  return (
+                    <Button
+                      className={p.className}
+                      label={p.label}
+                      icon={p.icon}
+                    />
+                  )
+                })
+              }
             </Col>
 
-            <Col width='23.8'>
-              <Button
-                className='default secondary'
-                label='Default Secondary'
-              />
-
-              <Button
-                className='hover secondary'
-                label='Hover Secondary'
-              />
-
-              <Button
-                className='focus secondary'
-                label='Focus Secondary'
-              />
-
-              <Button
-                className='disabled secondary'
-                label='Disabled Secondary'
-              />
-
-              <Button
-                className='loading secondary'
-                label='Loading Secondary'
-                icon={IconLoading}
-              />
-
-              <Button
-                className='movable secondary'
-                label='Movable Secondary'
-                icon={IconMovable}
-              />
+            <Col width={mockedData!?.documentation.secondary.width}>
+              {
+                mockedData?.documentation.secondary.buttons.map((s) => {
+                  return (
+                    <Button
+                      className={s.className}
+                      label={s.label}
+                      icon={s.icon}
+                    />
+                  )
+                })
+              }
             </Col>
 
-            <Col width='21.9'>
-              <Button
-                className='default tertiary'
-                label='Default Tertiary'
-              />
-
-              <Button
-                className='hover tertiary'
-                label='Hover Tertiary'
-              />
-
-              <Button
-                className='focus tertiary'
-                label='Focus Tertiary'
-              />
-
-              <Button
-                className='disabled tertiary'
-                label='Disabled Tertiary'
-              />
-
-              <Button
-                className='loading tertiary'
-                label='Loading Tertiary'
-                icon={IconLoading}
-              />
-
-              <Button
-                className='movable tertiary'
-                label='Movable Tertiary'
-                icon={IconMovable}
-              />
+            <Col width={mockedData!?.documentation.tertiary.width}>
+              {
+                mockedData?.documentation.tertiary.buttons.map((t) => {
+                  return (
+                    <Button
+                      className={t.className}
+                      label={t.label}
+                      icon={t.icon}
+                    />
+                  )
+                })
+              }
             </Col>
 
-            <Col width='4.8'>
-              <Cursor className='default' pointer={CursorDefault} />
-              <Cursor className='hover' pointer={CursorHover} />
-              <Cursor className='focus' pointer={CursorFocus} />
-              <Cursor className='disabled' pointer={CursorDisabled} />
-              <Cursor className='loading' pointer={CursorLoading} mask={MaskCursor} />
-              <Cursor className='movable' pointer={CursorMovable} />
+            <Col width={mockedData!?.documentation.cursors.width}>
+              {
+                mockedData?.documentation.cursors.cursors.map((c) => {
+                  return (
+                    <Cursor
+                      className={c.className}
+                      pointer={c.pointer}
+                      mask={c.mask}
+                    />
+                  )
+                })
+              }
             </Col>
           </ViewButtons>
         </Content>
