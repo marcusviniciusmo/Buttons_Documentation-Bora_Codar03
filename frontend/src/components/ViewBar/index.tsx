@@ -7,16 +7,16 @@ export function ViewBar(props: ViewBarProps) {
       {
         props.className === 'horizontalBar'
           ? <>
-            <Styles.Col width='23'>
+            <Styles.Col width='21.3'>
               <Styles.Label>Botão Primário</Styles.Label>
             </Styles.Col>
-            <Styles.Col width='23.3'>
+            <Styles.Col width='23.8'>
               <Styles.Label>Botão Secundário</Styles.Label>
             </Styles.Col>
-            <Styles.Col width='20.3'>
+            <Styles.Col width='21.9'>
               <Styles.Label>Botão Terciário</Styles.Label>
             </Styles.Col>
-            <Styles.Col width='8.4'>
+            <Styles.Col width='4.8'>
               <Styles.Label>Cursor</Styles.Label>
             </Styles.Col>
           </>
