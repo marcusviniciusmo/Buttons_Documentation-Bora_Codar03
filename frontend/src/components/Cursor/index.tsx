@@ -1,26 +1,34 @@
-import { CursorProps } from "types/Cursor";
+import { useEffect, useState } from "react";
+import { MockedData } from "mocks/Cursor";
+import { CursorProps, CursorMocks } from "types/Cursor";
 import { Container, Group, Content, MaskGroup, Mask, Pointer } from "./styles";
 
 export function Cursor(props: CursorProps) {
+  const [mockedData, setMockedData] = useState<CursorMocks>();
+
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
+
   const handleCursor = (className: string) => {
     switch (className) {
-      case 'default':
-        document.body.style.cursor = 'default';
+      case mockedData?.handleCursor[0].className:
+        document.body.style.cursor = mockedData!?.handleCursor[0].cursor;
         break;
-      case 'hover':
-        document.body.style.cursor = 'pointer';
+      case mockedData?.handleCursor[1].className:
+        document.body.style.cursor = mockedData!?.handleCursor[1].cursor;
         break;
-      case 'focus':
-        document.body.style.cursor = 'default';
+      case mockedData?.handleCursor[2].className:
+        document.body.style.cursor = mockedData!?.handleCursor[2].cursor;
         break;
-      case 'disabled':
-        document.body.style.cursor = 'not-allowed';
+      case mockedData?.handleCursor[3].className:
+        document.body.style.cursor = mockedData!?.handleCursor[3].cursor;
         break;
-      case 'loading':
-        document.body.style.cursor = 'wait';
+      case mockedData?.handleCursor[4].className:
+        document.body.style.cursor = mockedData!?.handleCursor[4].cursor;
         break;
-      case 'movable':
-        document.body.style.cursor = 'move';
+      case mockedData?.handleCursor[5].className:
+        document.body.style.cursor = mockedData!?.handleCursor[5].cursor;
         break;
     };
   };
@@ -30,7 +38,7 @@ export function Cursor(props: CursorProps) {
       className={props.className}
       onClick={() => handleCursor(props.className!)}
     >
-      <Group className={props.className} title='Click me!'>
+      <Group className={props.className} title={mockedData?.title}>
         <Content className={props.className}>
           {
             props.className === 'loading'
