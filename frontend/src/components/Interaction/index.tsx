@@ -1,30 +1,37 @@
+import { useEffect, useState } from 'react';
 import IconLoading from 'assets/iconLoading.png';
 import IconMovable from 'assets/iconMovable.png';
 import { TextDoc } from "components/TextDoc";
 import { Button } from "components/Button";
+import { MockedData } from 'mocks/Interaction';
+import { InteracionMocks } from 'types/Interaction';
 import { Container, Buttons } from "./styles";
-import { useState } from 'react';
 
 export function Interaction() {
+  const [mockedData, setMockedData] = useState<InteracionMocks>();
   const [showIconLoading, setShowIconLoading] = useState<boolean>(false);
   const [showIconMovable, setShowIconMovable] = useState<boolean>(false);
 
-  const toggleClassHover = (id: string) => {
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
+
+  const toggleHover = (id: string) => {
     const btn = document.getElementById(id);
-    btn?.classList.toggle(`${id}Hover`);
+    btn?.classList.toggle(`${id}${mockedData?.classHover}`);
   };
 
   const toggleClassFocus = (id: string) => {
     const btn = document.getElementById(id);
-    btn?.classList.toggle('interactionFocus');
+    btn?.classList.toggle(mockedData!?.classFocus);
 
-    if (id === 'interactionPrimary') {
-      btn?.classList.toggle('interactionDisabled');
-    } else if (id === 'interactionSecondary') {
-      btn?.classList.toggle('interactionLoading');
+    if (id === mockedData?.classNameInteraction[0].id) {
+      btn?.classList.toggle(mockedData.classNameInteraction[0].class);
+    } else if (id === mockedData?.classNameInteraction[1].id) {
+      btn?.classList.toggle(mockedData.classNameInteraction[1].class);
       setShowIconLoading(!showIconLoading);
-    } else {
-      btn?.classList.toggle('interactionMovable');
+    } else if (mockedData?.classNameInteraction[2].id) {
+      btn?.classList.toggle(mockedData.classNameInteraction[2].class);
       setShowIconMovable(!showIconMovable);
     };
   };
@@ -32,40 +39,39 @@ export function Interaction() {
   return (
     <Container>
       <TextDoc
-        className='interaction'
-        header='Teste os botões'
-        text={`Interaja com os botões e observe a mudança de aparência e de
-          cursores`}
+        className={mockedData?.textDocMock.className}
+        header={mockedData!?.textDocMock.header}
+        text={mockedData!?.textDocMock.text}
       />
 
       <Buttons>
         <Button
-          id='interactionPrimary'
-          className='interaction primary'
-          label='Interaja Comigo'
-          onMouseEnter={() => toggleClassHover('interactionPrimary')}
-          onMouseLeave={() => toggleClassHover('interactionPrimary')}
-          onClick={() => toggleClassFocus('interactionPrimary')}
+          id={mockedData?.buttons[0].id}
+          className={mockedData?.buttons[0].className}
+          label={mockedData?.buttons[0].label}
+          onMouseEnter={() => toggleHover(mockedData!?.buttons[0].id)}
+          onMouseLeave={() => toggleHover(mockedData!?.buttons[0].id)}
+          onClick={() => toggleClassFocus(mockedData!?.buttons[0].id)}
         />
 
         <Button
-          id='interactionSecondary'
-          className='interaction secondary'
-          label='Interaja Comigo'
+          id={mockedData?.buttons[1].id}
+          className={mockedData?.buttons[1].className}
+          label={mockedData?.buttons[1].label}
           icon={showIconLoading ? IconLoading : ''}
-          onMouseEnter={() => toggleClassHover('interactionSecondary')}
-          onMouseLeave={() => toggleClassHover('interactionSecondary')}
-          onClick={() => toggleClassFocus('interactionSecondary')}
+          onMouseEnter={() => toggleHover(mockedData!?.buttons[1].id)}
+          onMouseLeave={() => toggleHover(mockedData!?.buttons[1].id)}
+          onClick={() => toggleClassFocus(mockedData!?.buttons[1].id)}
         />
 
         <Button
-          id='interactionTertiary'
-          className='interaction tertiary'
-          label='Interaja Comigo'
+          id={mockedData?.buttons[2].id}
+          className={mockedData?.buttons[2].className}
+          label={mockedData?.buttons[2].label}
+          onMouseEnter={() => toggleHover(mockedData!?.buttons[2].id)}
+          onMouseLeave={() => toggleHover(mockedData!?.buttons[2].id)}
+          onClick={() => toggleClassFocus(mockedData!?.buttons[2].id)}
           icon={showIconMovable ? IconMovable : ''}
-          onMouseEnter={() => toggleClassHover('interactionTertiary')}
-          onMouseLeave={() => toggleClassHover('interactionTertiary')}
-          onClick={() => toggleClassFocus('interactionTertiary')}
         />
       </Buttons>
     </Container>
